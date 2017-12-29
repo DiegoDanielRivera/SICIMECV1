@@ -1,0 +1,173 @@
+<%include ../plantillas/header.ejs%>
+
+<!--INICIO: MENU PRINCIPAL IZQUIERDA-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Menú Principal</a>
+  <ul>
+   
+    <!-- INICIO: PANEL DE CONTROL -->   
+    <li>
+        <a href="index">
+        <i class="icon icon-home"></i>
+        <span>Panel de Control</span></a>
+    </li>
+    <!-- FIN: PANEL DE CONTROL -->
+     
+    <!-- INICIO: CATALOGOS -->
+    <li class="submenu active"> <a href="#"><i class="icon icon-folder-close"></i> <span>Catálogos</span></span></a>
+      <ul>
+        <li><a href="departamento">Departamentos</a></li>
+        <li><a href="equipo">Equipo</a></li>
+        <li><a href="marca">Marcas</a></li>
+        <li><a href="tipos-de-equipo">Tipos de equipo</a></li>
+      </ul>
+    </li>
+    <!-- FIN: CATALOGOS -->
+    
+    <!-- INICIO: MANTENIMIENTO -->
+    <li class="submenu"> <a href="#"><i class="icon icon-wrench"></i> <span>Mantenimiento</span></span></a>
+      <ul>
+        <li><a href="/mantenimiento/tipos-de-mantenimiento">Tipos de Mantenimiento</a></li>
+        <li><a href="/mantenimiento/causa-de-mantenimiento">Causa de Mantenimiento</a></li>
+        <li><a href="/mantenimiento/causas-de-baja">Causas de Baja</a></li>
+      </ul>
+    </li>
+    <!-- FIN: MANTENIMIENTO -->
+    
+    <!-- INICIO: MOVIMIENTOS -->
+    <li class="submenu"> <a href="#"><i class="icon icon-tasks"></i> <span>Movimientos</span></span></a>
+      <ul>
+        <li><a href="/movimientos/programar-mantenimiento">Programar Mantenimiento</a></li>
+        <li><a href="/movimientos/bajas">Bajas</a></li>
+      </ul>
+    </li>
+    <!-- FIN: MOVIMIENTOS -->
+    
+    <!-- INICIO: NOTAS -->
+    <li>
+        <a href="/notas/notas">
+        <i class="icon icon-pencil"></i>
+        <span>Notas</span></a>
+    </li>
+    <!-- FIN: NOTAS -->
+    
+    <!-- INICIO: REPORTES -->
+    <li class="submenu"><a href="#"><i class="icon icon-file"></i><span>Reportes</span></a>
+        <ul>
+            <li><a href="/reportes/relacion-de-equipos">Relación de Equipos</a></li>
+            <li><a href="/reportes/relacion-de-mantenimiento">Relación de Mantenimientos</a></li>
+            <li><a href="/reportes/relacion-de-bajas">Relación de Bajas</a></li>
+        </ul>
+    </li>
+    <!-- FIN: REPORTES -->
+    
+    <!-- INICIO: OPCIONES -->
+    <li class="submenu"><a href="#"><i class="icon icon-cogs"></i><span>Opciones</span></a>
+        <ul>
+            <li><a href="/opciones/configuracion">Configuración</a></li>
+            <li><a href="/opciones/usuarios">Usuarios</a></li>
+            <li><a href="/opciones/respaldos">Respaldos</a></li>
+        </ul>
+    </li>
+    <!-- FIN: OPCIONES -->
+    
+  </ul>
+</div>
+<!--FIN: MENU PRINCIPAL IZQUIERDA-->
+
+<!--INICIO: CONTENEDOR PRINCIPAL-->
+<div id="content">
+
+<!--INICIO: BREADCRUMBS-->
+<div id="content-header">
+    <div id="breadcrumb">
+    <a href="../panel-de-control/index" title="Ir a Inicio" class="tip-bottom"><i class="icon-home"></i> Inicio</a>
+    <a href="#"  class="tip-bottom"><i class="icon icon-folder-close"></i> Catalogos</a>
+    <a href="marca" title="Estás aquí" class="tip-bottom">Marcas</a>
+    </div>
+</div>
+<!--FIN: BREADCRUMBS-->
+
+<!--INICIO: ACTION BOXES-->
+<div class="container-fluid">
+<hr>
+    <div class="row-fluid">
+       <!--INICIO: SECCION COMPLETA-->
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-th"></i>
+                    </span>
+                    <div>
+                    <h5>TABLA DE MARCAS</h5>
+                    <div style="text-align:right">
+                        <a href="#modalAgregar" data-toggle="modal" class="btn btn-success">Agregar</a>
+                    </div>
+                    </div>
+                </div>
+          
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                     <!--INICIO: DATOS-->
+                    <tbody>
+                        <script>
+                            var arrayIndices = new Array();
+                            var arrayID = new Array();
+                            var arrayDescripcion = new Array();
+                            var arrayEstado = new Array();  
+                        </script>
+                       <% for (var i = 0 ; i < datos.length; i++) {%>
+                        <script>
+                            arrayIndices.push(<%= i %>);
+                            arrayID.push(<%= datos[i].idMarca %>);
+                            arrayDescripcion.push("<%= datos[i].descripcion %>");
+                            arrayEstado.push(<%= datos[i].baja %>);
+                            
+                            console.log("Indice: " + arrayIndices[<%= i %>])
+                            console.log("ID: " +arrayID[<%= i %>]);
+                            console.log("Descripcion: " +arrayDescripcion[<%= i %>]);
+                            console.log("Estado: " +arrayEstado[<%= i %>]);
+                        </script>
+                        <tr>
+                            <td style="text-align: center"> <%= datos[i].idMarca %> </td>
+                            <td> <%= datos[i].descripcion %>  </td>
+                            <td style="text-align: center"> <%= datos[i].baja==1 ? "Activo" : "Inactivo"  %>  </td>
+                            <td>
+                               <div style="text-align:center">
+                                    <a onclick="myFunction(id)" href="#modalModificar" data-toggle="modal" class="btn btn-warning" id="<%= i %>">Modificar</a> 
+                                    <a onclick="myFunction(id)" href="#modalEliminar" data-toggle="modal" class="btn btn-danger" id="<%= i %>">Eliminar</a> 
+                                </div>            
+                                <%include ../plantillas/modalesMarca.ejs%>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                     <!--FIN: DATOS-->
+                </table>
+            </div>
+        </div>
+    </div>    
+       <!--FIN: SECCION COMPLETA-->
+        
+    </div>
+</div>
+<!--FIN: ACTION BOXES-->
+
+<!--INICIO: CHART BOXES-->
+
+<!--FIN: CHART BOXES-->
+
+</div>
+
+
+<!--FIN: CONTENEDOR PRINCIPAL-->
+
+<%include ../plantillas/footer.ejs%>

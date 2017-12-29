@@ -1,0 +1,148 @@
+<!--INICIO: MODAL AGREGAR-->
+<div id="modalAgregar" class="modal hide">
+    <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button">×</button>
+        <h4 style="text-align: center">Agregar</h4>
+    </div>
+    <div class="modal-body">
+        <div class="widget-content nopadding">
+            <form action="/mantenimiento/tipos-de-mantenimiento" method="post" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" style="cursor:default">ID:</label>
+                <div class="controls">
+                    <input name ="idMarca" type="text" class="span11" placeholder="Default" disabled/>
+                </div>
+            </div>
+                                            
+            <div class="control-group">
+                <label class="control-label" style="cursor:default">Descripción:</label>
+                <div class="controls">
+                    <input name ="descripcion" type="text" class="span11" placeholder="" required/>
+                </div>
+            </div>
+                                            
+            <div class="control-group">
+                <label for="checkboxes" class="control-label" style="cursor:default">Estado:</label>
+                <div class="control-label" style="text-align:left">  
+                    <span class="label label-success" style="margin-left:20px">  ACTIVO  </span>
+                </div>
+            </div>
+                                            
+            <div class="form-actions" style="text-align:right">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a> 
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<!--FIN: MODAL AGREGAR-->
+
+
+<!--INICIO: MODAL MODIFICAR-->
+<div id="modalModificar" class="modal hide">
+    <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button">×</button>
+        <h4 style="text-align: center">Modificar</h4>
+    </div>
+    <div class="modal-body">
+        <div class="widget-content nopadding">
+            <form action="/mantenimiento/tipos-de-mantenimiento/editar" method="post" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label">ID:</label>
+                <div class="controls">
+                    <input type="text" class="span11" placeholder="SIN DATOS" id="idModificar" disabled/>
+                    <input name="id" type="text" class="span11" placeholder="SIN DATOS" id="idModificar2" style="display: none" />
+                    <span class="help-block">Por seguridad, el ID no se puede modificar</span>
+                    <input name="baja" type="text" class="span11" placeholder="SIN DATOS" id="baja" style="display: none" />
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Descripción:</label>
+                <div class="controls">
+                    <input name="descripcion" type="text" class="span11" placeholder="SIN DATOS" id="descripcionModificar" required/>
+                </div>
+                                            
+                <div class="control-group">
+                    <label for="checkboxes" class="control-label" style="cursor:default">Estado:</label>
+                    <div class="control-label" style="text-align:left">
+                       <span class="label label-success" style="margin-left:20px;">ACTIVO</span>       
+                    </div>
+                </div>
+            </div>
+                                            
+            <div class="form-actions" style="text-align:right">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a>
+            </div>
+            
+        </div>
+        </form>
+    </div>
+</div>
+<!--FIN: MODAL MODIFICAR-->
+
+
+<!--INICIO: MODAL ELIMINAR-->
+<div id="modalEliminar" class="modal hide">
+    <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button">×</button>
+        <h4>Eliminar registro</h4> <span class="label label-important">ADVERTENCIA</span>
+    </div>
+    <div class="modal-body">
+        <div class="widget-content nopadding">
+            <form action="/mantenimiento/tipos-de-mantenimiento/eliminar" method="POST" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label">ID:</label>
+                <div class="controls">
+                    <input type="text" class="span11" placeholder="SIN DATOS" id="idEliminar" disabled/>
+                    <input name="id" type="text" class="span11" placeholder="SIN DATOS" id="idEliminar2" style="display: none" />
+                    <span class="help-block">Por seguridad, el ID no se puede modificar</span>
+                    <input name="baja" type="text" class="span11" placeholder="SIN DATOS" id="baja" style="display: none" />
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Descripción:</label>
+                <div class="controls">
+                    <input name="descripcion" type="text" class="span11" placeholder="SIN DATOS" id="descripcionEliminar" disabled/>
+                </div>
+                                            
+                <div class="control-group">
+                    <label for="checkboxes" class="control-label" style="cursor:default">Estado:</label>
+                    <div class="control-label" style="text-align:left">  
+                        <span class="label label-success" style="margin-left:20px;">  ACTIVO  </span>
+                        <span class="help-block">El estado del registro pasará a INACTIVO</span>
+                        <span class="label label-important" style="margin-left:20px; display: none;">  DESACTIVADO  </span> 
+                    </div>
+                </div>
+            </div>
+                                            
+            <div class="form-actions" style="text-align:right">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a>
+            </div>
+            
+        </div>
+        </form>
+    </div>
+</div>
+<!--FIN: MODAL ELIMINAR-->
+
+
+<!-- INICIO: SCRIPTS PARA VENTANAS MODALES -->
+<script>
+    function myFunction(id) {
+        document.getElementById("idModificar").value = id;
+        document.getElementById("idModificar2").value = id;
+        document.getElementById("descripcionModificar").placeholder =  array[id-1];
+        document.getElementById("descripcionModificar").value =  array[id-1];
+        
+        document.getElementById("idEliminar").value = id;
+        document.getElementById("idEliminar2").value = id;
+        document.getElementById("descripcionEliminar").placeholder =  array[id-1];
+        document.getElementById("descripcionEliminar").value =  array[id-1];
+    }                               
+</script>
+<!-- FIN: SCRIPTS PARA VENTANAS MODALES -->

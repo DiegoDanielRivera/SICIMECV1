@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <title>SICIMEC V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--INICIO: CARGA DE HOJAS DE ESTILOS-->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="../../css/fullcalendar.css" />
+    <link rel="stylesheet" href="../../css/uniform.css" />
+    <link rel="stylesheet" href="../../css/select2.css" />
+    <link rel="stylesheet" href="../../css/matrix-style.css" />
+    <link rel="stylesheet" href="../../css/matrix-media.css" />
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/jquery.gritter.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <!--FIN: CARGA DE HOJAS DE ESTILOS-->
+</head>
+
+<body>
+<!--INICIO: HEADER-->
+<div id="header">
+    <h1><a href="#">SICIMEC</a></h1>
+</div>
+<!--FIN: HEADER-->
+
+<!--INICIO: HEADER MENU TOP-->
+<div id="user-nav" class="navbar navbar-inverse">
+<ul class="nav">
+
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i> <span class="text">Bienvenido Administrador </span> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#"><i class="icon-user"></i> Mi Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="icon-check"></i> Mis tareas</a></li>
+            <li class="divider"></li>
+            <li><a href="login.html"><i class="icon-key"></i> Cerrar Sesión</a></li>
+        </ul>
+    </li>
+
+    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Configuración</span></a></li>
+
+    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Cerrar Sesión</span></a></li>
+</ul>
+</div>
+<!--FIN: HEADER MENU TOP-->
+
+<!--INICIO: MENU PRINCIPAL IZQUIERDA-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Menú Principal</a>
+  <ul>
+    <li>
+        <a href="panel-de-control.html">
+        <i class="icon icon-home"></i>
+        <span>Panel de Control</span></a>
+    </li>
+
+    <li class="submenu active"> <a href="#"><i class="icon icon-folder-close"></i> <span>Catalogos</span></span></a>
+      <ul>
+        <li><a href="departamento.html">Departamentos</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="marca.html">Marcas</a></li>
+        <li><a href="tipos-de-equipo.html">Tipos de equipo</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu"> <a href="#"><i class="icon icon-wrench"></i> <span>Mantenimiento</span></span></a>
+      <ul>
+        <li><a href="../03mantenimiento/tipos-de-mantenimiento.html">Tipos de Mantenimiento</a></li>
+        <li><a href="../03mantenimiento/causa-de-mantenimiento.html">Causa de Mantenimiento</a></li>
+        <li><a href="../03mantenimiento/causas-de-baja.html">Causas de Baja</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu"> <a href="#"><i class="icon icon-tasks"></i> <span>Movimientos</span></span></a>
+      <ul>
+        <li><a href="../04movimientos/programar-mantenimiento.html">Programar Mantenimiento</a></li>
+        <li><a href="../04movimientos/bajas.html">Bajas</a></li>
+      </ul>
+    </li>
+
+    <li>
+        <a href="departamentos.html">
+        <i class="icon icon-pencil"></i>
+        <span>Notas</span></a>
+    </li>
+
+    <li class="submenu"><a href="departamentos.html"><i class="icon icon-file"></i><span>Reportes</span></a>
+        <ul>
+            <li><a href="../06reportes/relacion-de-equipos.html">Relación de Equipos</a></li>
+            <li><a href="../06reportes/relacion-de-mantenimiento.html">Relación de Mantenimientos</a></li>
+            <li><a href="../06reportes/relacion-de-bajas.html">Relación de Bajas</a></li>
+        </ul>
+    </li>
+
+    <li class="submenu"><a href="departamentos.html"><i class="icon icon-cogs"></i><span>Opciones</span></a>
+        <ul>
+            <li><a href="../07opciones/configuracion.html">Configuración</a></li>
+            <li><a href="../07opciones/usuarios.html">Usuarios</a></li>
+            <li><a href="../07opciones/respaldos.html">Respaldos</a></li>
+        </ul>
+    </li>
+
+  </ul>
+</div>
+<!--FIN: MENU PRINCIPAL IZQUIERDA-->
+
+<!--INICIO: CONTENEDOR PRINCIPAL-->
+<div id="content">
+
+<!--INICIO: BREADCRUMBS-->
+<div id="content-header">
+    <div id="breadcrumb">
+    <a href="../../index.html" title="Ir a Inicio" class="tip-bottom"><i class="icon-home"></i> Inicio</a>
+    <a href="#"  class="tip-bottom"><i class="icon icon-folder-close"></i> Catalogos</a>
+    <a href="index.html" title="Estás aquí" class="tip-bottom">Marcas</a>
+    </div>
+</div>
+<!--FIN: BREADCRUMBS-->
+
+<!--INICIO: ACTION BOXES-->
+<div class="container-fluid">
+<hr>
+    <div class="row-fluid">
+       <!--INICIO: SECCION COMPLETA-->
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-th"></i>
+                    </span>
+                    <div>
+                    <h5>TABLA DE MARCAS</h5>
+                    <div style="text-align:right">
+                        <a href="#modalAgregar" data-toggle="modal" class="btn btn-success">Agregar</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+
+                        </tr>
+                    </thead>
+                     <!--INICIO: DATOS-->
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center">1</td>
+                            <td>Lenovo</td>
+                            <td style="text-align: center">Activo</td>
+                            <td>
+                               <div style="text-align:center">
+                                    <a href="#modalModificar" data-toggle="modal" class="btn btn-warning">Modificar</a>
+                                    <a href="#modalEliminar" data-toggle="modal" class="btn btn-danger">Eliminar</a>
+                                </div>
+                                <!--INICIO: MODAL MODIFICAR-->
+                                <div id="modalModificar" class="modal hide">
+                                    <div class="modal-header">
+                                        <button data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4 style="text-align: center">Modificar</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="widget-content nopadding">
+                                          <form action="#" method="get" class="form-horizontal">
+                                            <div class="control-group">
+                                              <label class="control-label">ID:</label>
+                                              <div class="controls">
+                                                <input type="text" class="span11" placeholder="1" disabled/>
+                                              </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <label class="control-label">Descripción:</label>
+                                              <div class="controls">
+                                                <input type="text" class="span11" placeholder="Lenovo"/>
+                                                <span class="help-block">Marca del equipo</span> </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <label for="checkboxes" class="control-label">Estado:</label>
+                                              <div class="controls">
+                                                <div data-toggle="buttons-radio" class="btn-group">
+                                                  <button class="btn btn-success" type="button">ACTIVO</button>
+                                                  <button class="btn btn-danger" type="button">INACTIVO</button>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="form-actions" style="text-align:right">
+                                              <button type="submit" class="btn btn-success">Guardar</button>
+                                              <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a> </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                    </div>
+                                <!--FIN: MODAL MODIFICAR-->
+
+                                <!--INICIO: MODAL ELIMINAR-->
+                                <div id="modalEliminar" class="modal hide">
+                                  <div class="modal-header">
+                                    <button data-dismiss="modal" class="close" type="button">×</button>
+                                    <h4>Eliminar registro</h4> <span class="label label-important">ADVERTENCIA</span>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Esta seguro que desea eliminar el registro?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                       <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a> </div>
+                                </div>
+                                <!--FIN: MODAL ELIMINAR-->
+
+                                <!--INICIO: MODAL AGREGAR-->
+                                <div id="modalAgregar" class="modal hide">
+                                    <div class="modal-header">
+                                        <button data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4 style="text-align: center">Agregar</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="widget-content nopadding">
+                                          <form action="#" method="get" class="form-horizontal">
+                                            <div class="control-group">
+                                              <label class="control-label">ID:</label>
+                                              <div class="controls">
+                                                <input type="text" class="span11" placeholder="2" disabled/>
+                                              </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <label class="control-label">Descripción:</label>
+                                              <div class="controls">
+                                                <input type="text" class="span11" placeholder="Lenovo"/>
+                                                <span class="help-block">Marca del equipo</span> </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <label for="checkboxes" class="control-label">Estado:</label>
+                                              <div class="controls">
+                                                <div data-toggle="buttons-radio" class="btn-group">
+                                                  <button class="btn btn-success" type="button">ACTIVO</button>
+                                                  <button class="btn btn-danger" type="button">INACTIVO</button>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="form-actions" style="text-align:right">
+                                              <button type="submit" class="btn btn-success">Guardar</button>
+                                              <a data-dismiss="modal" class="btn btn-inverse" href="#">Cancelar</a> </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                    </div>
+                                <!--FIN: MODAL AGREGAR-->
+                            </td>
+                        </tr>
+
+                    </tbody>
+                     <!--FIN: DATOS-->
+                </table>
+            </div>
+        </div>
+    </div>
+       <!--FIN: SECCION COMPLETA-->
+
+    </div>
+</div>
+<!--FIN: ACTION BOXES-->
+
+<!--INICIO: CHART BOXES-->
+
+<!--FIN: CHART BOXES-->
+
+</div>
+<!--FIN: CONTENEDOR PRINCIPAL-->
+
+
+
+<!--INICIO: FOOTER-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2018 &copy; SICIMEC V1 | CBTIS 085 | <a href="http://www.cbtis085.org">www.cbits085.org</a> </div>
+</div>
+<!--FIN: FOOTER-->
+
+<!--INICIO: IMPORTACIÓN DE SCRIPTS-->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/jquery.ui.custom.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/jquery.uniform.js"></script>
+<script src="../../js/select2.min.js"></script>
+<script src="../../js/jquery.dataTables.min.js"></script>
+<script src="../../js/matrix.js"></script>
+<script src="../../js/matrix.tables.js"></script>
+<!--FIN: IMPORTACION DE SCRIPTS-->
+
+</body>
+</html>

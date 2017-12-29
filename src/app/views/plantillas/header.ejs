@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <title>SICIMEC V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--INICIO: CARGA DE HOJAS DE ESTILOS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="/css/fullcalendar.css" />
+    <link rel="stylesheet" href="/css/uniform.css" />
+    <link rel="stylesheet" href="/css/select2.css" />
+    <link rel="stylesheet" href="/css/matrix-style.css" />
+    <link rel="stylesheet" href="/css/matrix-media.css" />
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/jquery.gritter.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <!--FIN: CARGA DE HOJAS DE ESTILOS-->
+</head>
+<body>
+
+    <!--INICIO: HEADER-->
+    <div id="header">
+        <h1><a href="#">SICIMEC</a></h1>
+    </div>
+    <!--FIN: HEADER-->
+
+    <!--INICIO: HEADER MENU TOP-->
+    <div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav">
+        
+        <!-- INICIO: BIENVENIDA -->
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i> <span class="text">Bienvenido Administrador </span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="/sesion/perfil"><i class="icon-user"></i> Mi Perfil</a></li>
+                <li class="divider"></li>
+                <li><a href="/auxiliares/tareas"><i class="icon-check"></i> Mis tareas</a></li>
+                <li class="divider"></li>
+                <li><a href="/sesion/finalizada"><i class="icon-key"></i> Cerrar Sesión</a></li>
+            </ul>
+        </li>
+        <!-- FIN: BIENVENIDA -->
+
+        <!-- INICIO: CONFIGURACION -->
+        <li class=""><a title="" href="/opciones/configuracion"><i class="icon icon-cog"></i> <span class="text">Configuración</span></a></li>
+        <!-- FIN: CONFIGURACION -->
+        
+        <!-- INICIO: CERRAR SESION -->
+        <li class=""><a title="" href="/sesion/finalizada"><i class="icon icon-share-alt"></i> <span class="text">Cerrar Sesión</span></a></li>
+        <!-- FIN: CERRAR SESION -->
+        
+    </ul>
+    </div>
+    <!--FIN: HEADER MENU TOP-->
